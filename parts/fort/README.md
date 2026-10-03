@@ -10,4 +10,4 @@ Survival as waves with building.
 
 **Modes:** `hd4lsurvival`, `hd4lfort`, `hd4lfreebuild`
 
-**Code:** `addon/scripts/vscripts/fort.nut`. Knobs sit at the top of each script.
+**Code:** `addon/scripts/vscripts/fort.nut` (knobs, blueprints, the tick and round start) includes `fort_scrap.nut` (salvage and loot), `fort_build.nut` (build mode and the ghost), `fort_grid.nut` (placement, support and repair), `fort_pieces.nut` (wear, traps and debris) and `fort_waves.nut` (loadouts, waves, climbing and the director). Knobs sit at the top of each script.

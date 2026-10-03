@@ -58,6 +58,8 @@ function Box(cls, dx, dy, dz) {
 }
 
 Load("parts/fort/addon/scripts/vscripts/fort.nut");
+foreach (file in ::Fort.Files)
+	Load("parts/fort/addon/scripts/vscripts/" + file + ".nut");
 
 function Survival() {
 	Reset();
