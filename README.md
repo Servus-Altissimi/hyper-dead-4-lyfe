@@ -1,4 +1,5 @@
 <p align="center"><img src="parts/core/art/readme_logo.svg" alt="Hyper Dead 4 Lyfe" width="720"></p>
+<p align="center"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3807802174"><img src="https://img.shields.io/badge/Steam%20Workshop-Subscribe-1b2838?style=for-the-badge&logo=steam&logoColor=white" alt="Subscribe on the Steam Workshop"></a></p>
 
 # Hyper Dead 4 Lyfe
 
