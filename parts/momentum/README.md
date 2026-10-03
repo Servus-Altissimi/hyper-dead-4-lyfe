@@ -16,4 +16,4 @@ The survivor movement kit, all on one stamina bar (100, regen 30/s after 0.6 s, 
 
 **Modes:** `hd4l`, `hd4lversus`, `hd4lsurvival`
 
-**Code:** `addon/scripts/vscripts/momentum.nut`. Knobs sit at the top of each script.
+**Code:** `addon/scripts/vscripts/momentum.nut` (knobs, stamina, input, the per-player update and the tick) includes `momentum_moves.nut` (dash, heavy, slide, kicks, dive, HYPER), `momentum_wall.nut` (wall run and vault), `momentum_hurt.nut` (hit slow, last stand, pins and break free), `momentum_parry.nut` (rock, spit and tank parries), `momentum_infected.nut` (the versus infected kit) and `momentum_fx.nut` (effects). Knobs sit at the top of each script.

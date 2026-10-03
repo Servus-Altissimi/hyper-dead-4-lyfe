@@ -4,6 +4,8 @@ Suite("momentum");
 
 Load("parts/core/addon/scripts/vscripts/hd4l_core.nut");
 Load("parts/momentum/addon/scripts/vscripts/momentum.nut");
+foreach (file in ::Momentum.Files)
+	Load("parts/momentum/addon/scripts/vscripts/" + file + ".nut");
 
 function Fresh() {
 	Reset();
