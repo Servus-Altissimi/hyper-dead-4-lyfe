@@ -1,0 +1,43 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/hud/ScalablePanel_bgMidGrey_outlineGreen_glow"
+	"$translucent" "1"
+	"$vertexalpha" "1"
+	"$vertexcolor" "1"
+	"$ignorez" "1"
+	"$no_fullbright" "1"
+	"$alpha" "1"
+	"$v" "0" "$lastv" "0" "$armed" "0" "$dv" "0" "$vgo" "0" "$time" "0" "$vstart" "-1000" "$vage" "0" "$live" "0"
+	"$zero" "0" "$one" "1" "$two" "2" "$my_live" "3.0"
+	"$guard" "50000" "$million" "1000000" "$full_div" "16200"
+	"$t" "0" "$tag" "0" "$tagbase" "0" "$payload" "0" "$hit" "0" "$q" "0" "$q2" "0" "$fnew" "0" "$full" "0"
+	"Proxies"
+	{
+		"ConVar" { "convar" "name2" "resultVar" "$v" }
+		"Add" { "srcVar1" "$v" "srcVar2" "$guard" "resultVar" "$t" }
+		"Divide" { "srcVar1" "$t" "srcVar2" "$million" "resultVar" "$t" }
+		"Int" { "srcVar1" "$t" "resultVar" "$tag" }
+		"Multiply" { "srcVar1" "$tag" "srcVar2" "$million" "resultVar" "$tagbase" }
+		"Subtract" { "srcVar1" "$v" "srcVar2" "$tagbase" "resultVar" "$payload" }
+		"Subtract" { "srcVar1" "$tag" "srcVar2" "$one" "resultVar" "$hit" }
+		"Abs" { "srcVar1" "$hit" "resultVar" "$hit" }
+		"Divide" { "srcVar1" "$payload" "srcVar2" "$full_div" "resultVar" "$q" }
+		"Int" { "srcVar1" "$q" "resultVar" "$q" }
+		"Divide" { "srcVar1" "$q" "srcVar2" "$two" "resultVar" "$q2" }
+		"Int" { "srcVar1" "$q2" "resultVar" "$q2" }
+		"Multiply" { "srcVar1" "$q2" "srcVar2" "$two" "resultVar" "$q2" }
+		"Subtract" { "srcVar1" "$q" "srcVar2" "$q2" "resultVar" "$fnew" }
+		"LessOrEqual" { "srcVar1" "$hit" "srcVar2" "$zero" "resultVar" "$full" "LessEqualVar" "$fnew" "greaterVar" "$full" }
+		"CurrentTime" { "resultVar" "$time" }
+		"Subtract" { "srcVar1" "$v" "srcVar2" "$lastv" "resultVar" "$dv" }
+		"Abs" { "srcVar1" "$dv" "resultVar" "$dv" }
+		"Multiply" { "srcVar1" "$dv" "srcVar2" "$armed" "resultVar" "$vgo" }
+		"LessOrEqual" { "srcVar1" "$vgo" "srcVar2" "$zero" "resultVar" "$vstart" "LessEqualVar" "$vstart" "greaterVar" "$time" }
+		"Equals" { "srcVar1" "$v" "resultVar" "$lastv" }
+		"Equals" { "srcVar1" "$one" "resultVar" "$armed" }
+		"Subtract" { "srcVar1" "$time" "srcVar2" "$vstart" "resultVar" "$vage" }
+		"LessOrEqual" { "srcVar1" "$vage" "srcVar2" "$my_live" "resultVar" "$live" "LessEqualVar" "$one" "greaterVar" "$zero" }
+		"Multiply" { "srcVar1" "$live" "srcVar2" "$full" "resultVar" "$live" }
+		"Subtract" { "srcVar1" "$one" "srcVar2" "$live" "resultVar" "$alpha" }
+	}
+}

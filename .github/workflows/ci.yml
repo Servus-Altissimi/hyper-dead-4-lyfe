@@ -1,0 +1,37 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install ffmpeg and vpk
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          pip install vpk
+      - name: Build Squirrel 3.1
+        run: |
+          git -c advice.detachedHead=false clone --depth 1 --branch v3.1 https://github.com/albertodemichelis/squirrel /tmp/squirrel
+          cmake -S /tmp/squirrel -B /tmp/squirrel/build -DCMAKE_BUILD_TYPE=Release
+          cmake --build /tmp/squirrel/build -j4
+          sudo install /tmp/squirrel/build/sq/sq_static /usr/local/bin/sq
+      - name: Test
+        run: python3 -m tools test
+      - name: Build
+        run: python3 -m tools build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hd4l
+          path: build/hd4l.vpk

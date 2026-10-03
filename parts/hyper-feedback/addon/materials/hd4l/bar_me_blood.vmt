@@ -1,0 +1,87 @@
+"UnlitGeneric"
+{
+	"$basetexture" "hd4l/bar_me_cell"
+	"$additive" "1"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$ignorez" "1"
+	"$no_fullbright" "1"
+	"$nomip" "1"
+	"$nolod" "1"
+	"$color" "[1 1 1]"
+	"$alpha" "1"
+	"$r0" "0.9275" "$dh0" "0.0" "$bl0" "0.9275" "$wb0" "0.1725"
+	"$r1" "0.1941" "$dh1" "0.0" "$bl1" "0.1941" "$wb1" "0.8757"
+	"$r2" "0.151" "$dh2" "0.0" "$bl2" "0.151" "$wb2" "0.8627"
+	"$dur" "0.35"
+	"$zero" "0" "$one" "1" "$two" "2" "$guard" "50000" "$million" "1000000"
+	"$sdiv" "270" "$srad" "5" "$hdiv" "1350" "$hrad" "12"
+	"$v" "0" "$t" "0" "$tag" "0" "$tagbase" "0" "$payload" "0" "$hit" "0"
+	"$s" "0" "$s2" "0" "$snew" "0" "$seq" "0" "$lastseq" "0" "$chg" "0" "$time" "0" "$start" "0" "$age" "0"
+	"$f" "0" "$f2" "0" "$fnew" "0" "$stam" "0" "$hq" "0" "$hyp" "0"
+	"$pt" "0" "$tc" "1" "$k" "0" "$w" "0" "$b" "0" "$rc" "0" "$x" "0" "$y" "0"
+	"Proxies"
+	{
+		"ConVar" { "convar" "name2" "resultVar" "$v" }
+		"Add" { "srcVar1" "$v" "srcVar2" "$guard" "resultVar" "$t" }
+		"Divide" { "srcVar1" "$t" "srcVar2" "$million" "resultVar" "$t" }
+		"Int" { "srcVar1" "$t" "resultVar" "$tag" }
+		"Multiply" { "srcVar1" "$tag" "srcVar2" "$million" "resultVar" "$tagbase" }
+		"Subtract" { "srcVar1" "$v" "srcVar2" "$tagbase" "resultVar" "$payload" }
+		"Subtract" { "srcVar1" "$tag" "srcVar2" "$one" "resultVar" "$hit" }
+		"Abs" { "srcVar1" "$hit" "resultVar" "$hit" }
+		"Divide" { "srcVar1" "$payload" "srcVar2" "$sdiv" "resultVar" "$s" }
+		"Int" { "srcVar1" "$s" "resultVar" "$s" }
+		"Divide" { "srcVar1" "$s" "srcVar2" "$srad" "resultVar" "$s2" }
+		"Int" { "srcVar1" "$s2" "resultVar" "$s2" }
+		"Multiply" { "srcVar1" "$s2" "srcVar2" "$srad" "resultVar" "$s2" }
+		"Subtract" { "srcVar1" "$s" "srcVar2" "$s2" "resultVar" "$snew" }
+		"LessOrEqual" { "srcVar1" "$hit" "srcVar2" "$zero" "resultVar" "$seq" "LessEqualVar" "$snew" "greaterVar" "$seq" }
+		"Divide" { "srcVar1" "$payload" "srcVar2" "$hdiv" "resultVar" "$f" }
+		"Int" { "srcVar1" "$f" "resultVar" "$f" }
+		"Divide" { "srcVar1" "$f" "srcVar2" "$hrad" "resultVar" "$f2" }
+		"Int" { "srcVar1" "$f2" "resultVar" "$f2" }
+		"Multiply" { "srcVar1" "$f2" "srcVar2" "$hrad" "resultVar" "$f2" }
+		"Subtract" { "srcVar1" "$f" "srcVar2" "$f2" "resultVar" "$fnew" }
+		"LessOrEqual" { "srcVar1" "$hit" "srcVar2" "$zero" "resultVar" "$stam" "LessEqualVar" "$fnew" "greaterVar" "$stam" }
+		"Divide" { "srcVar1" "$stam" "srcVar2" "$two" "resultVar" "$hq" }
+		"Int" { "srcVar1" "$hq" "resultVar" "$hq" }
+		"Multiply" { "srcVar1" "$hq" "srcVar2" "$two" "resultVar" "$hq" }
+		"Subtract" { "srcVar1" "$stam" "srcVar2" "$hq" "resultVar" "$hyp" }
+		"CurrentTime" { "resultVar" "$time" }
+		"Subtract" { "srcVar1" "$seq" "srcVar2" "$lastseq" "resultVar" "$chg" }
+		"Abs" { "srcVar1" "$chg" "resultVar" "$chg" }
+		"LessOrEqual" { "srcVar1" "$chg" "srcVar2" "$zero" "resultVar" "$start" "LessEqualVar" "$start" "greaterVar" "$time" }
+		"Equals" { "srcVar1" "$seq" "resultVar" "$lastseq" }
+		"Subtract" { "srcVar1" "$time" "srcVar2" "$start" "resultVar" "$age" }
+		"Divide" { "srcVar1" "$age" "srcVar2" "$dur" "resultVar" "$pt" }
+		"LessOrEqual" { "srcVar1" "$pt" "srcVar2" "$one" "resultVar" "$tc" "LessEqualVar" "$pt" "greaterVar" "$one" }
+		"Subtract" { "srcVar1" "$one" "srcVar2" "$tc" "resultVar" "$k" }
+		"Multiply" { "srcVar1" "$k" "srcVar2" "$two" "resultVar" "$b" }
+		"Subtract" { "srcVar1" "$b" "srcVar2" "$one" "resultVar" "$w" }
+		"LessOrEqual" { "srcVar1" "$w" "srcVar2" "$zero" "resultVar" "$w" "LessEqualVar" "$zero" "greaterVar" "$w" }
+		"LessOrEqual" { "srcVar1" "$b" "srcVar2" "$one" "resultVar" "$b" "LessEqualVar" "$b" "greaterVar" "$one" }
+		"Multiply" { "srcVar1" "$hyp" "srcVar2" "$dh0" "resultVar" "$rc" }
+		"Add" { "srcVar1" "$rc" "srcVar2" "$r0" "resultVar" "$rc" }
+		"Subtract" { "srcVar1" "$bl0" "srcVar2" "$rc" "resultVar" "$x" }
+		"Multiply" { "srcVar1" "$x" "srcVar2" "$b" "resultVar" "$x" }
+		"Multiply" { "srcVar1" "$wb0" "srcVar2" "$w" "resultVar" "$y" }
+		"Add" { "srcVar1" "$rc" "srcVar2" "$x" "resultVar" "$rc" }
+		"Add" { "srcVar1" "$rc" "srcVar2" "$y" "resultVar" "$color[0]" }
+		"Multiply" { "srcVar1" "$hyp" "srcVar2" "$dh1" "resultVar" "$rc" }
+		"Add" { "srcVar1" "$rc" "srcVar2" "$r1" "resultVar" "$rc" }
+		"Subtract" { "srcVar1" "$bl1" "srcVar2" "$rc" "resultVar" "$x" }
+		"Multiply" { "srcVar1" "$x" "srcVar2" "$b" "resultVar" "$x" }
+		"Multiply" { "srcVar1" "$wb1" "srcVar2" "$w" "resultVar" "$y" }
+		"Add" { "srcVar1" "$rc" "srcVar2" "$x" "resultVar" "$rc" }
+		"Add" { "srcVar1" "$rc" "srcVar2" "$y" "resultVar" "$color[1]" }
+		"Multiply" { "srcVar1" "$hyp" "srcVar2" "$dh2" "resultVar" "$rc" }
+		"Add" { "srcVar1" "$rc" "srcVar2" "$r2" "resultVar" "$rc" }
+		"Subtract" { "srcVar1" "$bl2" "srcVar2" "$rc" "resultVar" "$x" }
+		"Multiply" { "srcVar1" "$x" "srcVar2" "$b" "resultVar" "$x" }
+		"Multiply" { "srcVar1" "$wb2" "srcVar2" "$w" "resultVar" "$y" }
+		"Add" { "srcVar1" "$rc" "srcVar2" "$x" "resultVar" "$rc" }
+		"Add" { "srcVar1" "$rc" "srcVar2" "$y" "resultVar" "$color[2]" }
+		"Sine" { "sineperiod" "0.6" "sinemin" "0.55" "sinemax" "1.0" "resultVar" "$alpha" }
+	}
+}

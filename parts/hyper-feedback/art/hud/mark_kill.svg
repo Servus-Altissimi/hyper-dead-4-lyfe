@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="512" viewBox="0 0 1024 512">
+  <rect id="screen" width="1024" height="512" fill="#000000"/>
+  <g id="kill">
+    <line x1="522.06" y1="267.31" x2="539.66" y2="287.11" stroke="#d72d23" stroke-width="8"/>
+    <line x1="501.94" y1="267.31" x2="484.34" y2="287.11" stroke="#d72d23" stroke-width="8"/>
+    <line x1="501.94" y1="244.69" x2="484.34" y2="224.89" stroke="#d72d23" stroke-width="8"/>
+    <line x1="522.06" y1="244.69" x2="539.66" y2="224.89" stroke="#d72d23" stroke-width="8"/>
+    <line x1="581.33" y1="270" x2="568.89" y2="256" stroke="#d72d23" stroke-width="6"/>
+    <line x1="581.33" y1="242" x2="568.89" y2="256" stroke="#d72d23" stroke-width="6"/>
+    <line x1="499.56" y1="334" x2="512" y2="320" stroke="#d72d23" stroke-width="6"/>
+    <line x1="524.44" y1="334" x2="512" y2="320" stroke="#d72d23" stroke-width="6"/>
+    <line x1="442.67" y1="242" x2="455.11" y2="256" stroke="#d72d23" stroke-width="6"/>
+    <line x1="442.67" y1="270" x2="455.11" y2="256" stroke="#d72d23" stroke-width="6"/>
+    <line x1="524.44" y1="178" x2="512" y2="192" stroke="#d72d23" stroke-width="6"/>
+    <line x1="499.56" y1="178" x2="512" y2="192" stroke="#d72d23" stroke-width="6"/>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+*.vpk
+build/
+parts/hyper-feedback/legacy/
+__pycache__/
+*.pyc
+*.cnut
+*.log
+*~
+sound.cache

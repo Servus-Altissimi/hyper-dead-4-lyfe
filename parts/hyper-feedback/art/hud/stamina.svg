@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="512" viewBox="0 0 1024 512">
+  <rect id="screen" width="1024" height="512" fill="#000000"/>
+  <g id="stamina">
+    <rect id="seg1" x="478.22" y="360" width="11.67" height="5" fill="#ff7832"/>
+    <rect id="seg2" x="492.44" y="360" width="11.67" height="5" fill="#ff7832"/>
+    <rect id="seg3" x="506.67" y="360" width="11.67" height="5" fill="#ff7832"/>
+    <rect id="seg4" x="520.89" y="360" width="11.67" height="5" fill="#ff7832"/>
+    <rect id="seg5" x="535.11" y="360" width="11.67" height="5" fill="#ff7832"/>
+    <line id="bracket1" x1="469.33" y1="358" x2="469.33" y2="366" stroke="#ff7832" stroke-width="2"/>
+    <line id="bracket2" x1="554.67" y1="358" x2="554.67" y2="366" stroke="#ff7832" stroke-width="2"/>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+"patch"
+{
+	"include" "materials/hd4l/pn_shared.vmt"
+	"insert"
+	{
+		"$basetexture" "hd4l/dg_w3"
+		"$my_tag" "13"
+		"$my_div" "121"
+		"$my_radix" "11"
+		"$my_value" "3"
+		"$my_seqdiv" "121"
+		"$my_seqradix" "11"
+		"$my_duration" "1000000"
+	}
+}

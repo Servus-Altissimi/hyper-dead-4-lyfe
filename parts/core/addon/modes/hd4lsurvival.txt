@@ -1,0 +1,26 @@
+"hd4lsurvival"
+{
+	"base"		"survival"
+	"maxplayers"	"4"
+
+	"Author"	"Servus"
+
+	"DisplayTitle"	"Hyper Dead 4 Lyfe: Fort"
+
+	convar
+	{
+		z_gun_swing_coop_min_penalty 999999999
+		z_gun_swing_coop_max_penalty 999999999
+
+		sv_unlag 1
+		sv_client_min_interp_ratio 1
+		sv_client_max_interp_ratio 2
+		sv_maxrate 0
+		sv_minrate 30000
+		net_splitpacket_maxrate 50000
+
+		first_aid_kit_use_duration 3
+		ammo_pack_use_duration 0.05
+		ammo_m60_max 150
+	}
+}

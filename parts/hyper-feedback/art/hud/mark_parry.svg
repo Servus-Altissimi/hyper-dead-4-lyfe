@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="512" viewBox="0 0 1024 512">
+  <rect id="screen" width="1024" height="512" fill="#000000"/>
+  <g id="parry">
+    <line x1="519.54" y1="264.49" x2="530.86" y2="277.21" stroke="#e1d7c3" stroke-width="5"/>
+    <line x1="504.46" y1="264.49" x2="493.14" y2="277.21" stroke="#e1d7c3" stroke-width="5"/>
+    <line x1="504.46" y1="247.51" x2="493.14" y2="234.79" stroke="#e1d7c3" stroke-width="5"/>
+    <line x1="519.54" y1="247.51" x2="530.86" y2="234.79" stroke="#e1d7c3" stroke-width="5"/>
+    <line x1="558.22" y1="272" x2="574.22" y2="256" stroke="#ffb03c" stroke-width="7"/>
+    <line x1="558.22" y1="240" x2="574.22" y2="256" stroke="#ffb03c" stroke-width="7"/>
+    <line x1="497.78" y1="308" x2="512" y2="326" stroke="#ffb03c" stroke-width="7"/>
+    <line x1="526.22" y1="308" x2="512" y2="326" stroke="#ffb03c" stroke-width="7"/>
+    <line x1="465.78" y1="240" x2="449.78" y2="256" stroke="#ffb03c" stroke-width="7"/>
+    <line x1="465.78" y1="272" x2="449.78" y2="256" stroke="#ffb03c" stroke-width="7"/>
+    <line x1="526.22" y1="204" x2="512" y2="186" stroke="#ffb03c" stroke-width="7"/>
+    <line x1="497.78" y1="204" x2="512" y2="186" stroke="#ffb03c" stroke-width="7"/>
+  </g>
+</svg>

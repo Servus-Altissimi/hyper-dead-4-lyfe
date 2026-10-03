@@ -1,0 +1,21 @@
+"hd4lfort"
+{
+	"base"		"survival"
+	"maxplayers"	"4"
+
+	"Author"	"Servus"
+
+	"DisplayTitle"	"Fort"
+
+	convar
+	{
+		sv_unlag 1
+		sv_client_min_interp_ratio 1
+		sv_client_max_interp_ratio 2
+		sv_maxrate 0
+		sv_minrate 30000
+		net_splitpacket_maxrate 50000
+
+		ammo_m60_max 150
+	}
+}

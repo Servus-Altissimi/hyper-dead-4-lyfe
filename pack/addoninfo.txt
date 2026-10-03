@@ -1,0 +1,13 @@
+"AddonInfo"
+{
+	addonSteamAppID			550
+	addontitle			"Hyper Dead 4 Lyfe"
+	addonversion			"0.0.1"
+	addonauthor			"Servus"
+	addonShortDescription		"L4D2 as an arcade run."
+	addonDescription		"Movement kit, no downtime, the bots are your lives. Pick Hyper Dead 4 Lyfe in the main menu."
+	addonContent_Script		1
+	addonContent_Map		0
+	addonContent_Skin		0
+	addonContent_Prop		0
+}

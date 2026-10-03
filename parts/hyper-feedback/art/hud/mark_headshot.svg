@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="512" viewBox="0 0 1024 512">
+  <rect id="screen" width="1024" height="512" fill="#000000"/>
+  <g id="headshot">
+    <line x1="522.06" y1="267.31" x2="540.91" y2="288.53" stroke="#ffb03c" stroke-width="8"/>
+    <line x1="501.94" y1="267.31" x2="483.09" y2="288.53" stroke="#ffb03c" stroke-width="8"/>
+    <line x1="501.94" y1="244.69" x2="483.09" y2="223.47" stroke="#ffb03c" stroke-width="8"/>
+    <line x1="522.06" y1="244.69" x2="540.91" y2="223.47" stroke="#ffb03c" stroke-width="8"/>
+    <line x1="586.67" y1="272" x2="572.44" y2="256" stroke="#d72d23" stroke-width="7"/>
+    <line x1="586.67" y1="240" x2="572.44" y2="256" stroke="#d72d23" stroke-width="7"/>
+    <line x1="497.78" y1="340" x2="512" y2="324" stroke="#d72d23" stroke-width="7"/>
+    <line x1="526.22" y1="340" x2="512" y2="324" stroke="#d72d23" stroke-width="7"/>
+    <line x1="437.33" y1="240" x2="451.56" y2="256" stroke="#d72d23" stroke-width="7"/>
+    <line x1="437.33" y1="272" x2="451.56" y2="256" stroke="#d72d23" stroke-width="7"/>
+    <line x1="526.22" y1="172" x2="512" y2="188" stroke="#d72d23" stroke-width="7"/>
+    <line x1="497.78" y1="172" x2="512" y2="188" stroke="#d72d23" stroke-width="7"/>
+    <ellipse cx="512" cy="256" rx="5.22" ry="6" fill="none" stroke="#ffb03c" stroke-width="3"/>
+  </g>
+</svg>

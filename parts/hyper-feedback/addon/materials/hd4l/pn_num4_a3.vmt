@@ -1,0 +1,18 @@
+"patch"
+{
+	"include" "materials/hd4l/pn_shared_tone.vmt"
+	"insert"
+	{
+		"$basetexture" "hd4l/dg_a3"
+		"$my_tag" "5"
+		"$my_div" "1331"
+		"$my_radix" "11"
+		"$my_value" "3"
+		"$my_seqdiv" "1331"
+		"$my_seqradix" "11"
+		"$my_duration" "1000000"
+		"$my_tonediv" "14641"
+		"$my_toneradix" "2"
+		"$my_tone" "0"
+	}
+}

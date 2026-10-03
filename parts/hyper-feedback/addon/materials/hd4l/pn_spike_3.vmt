@@ -1,0 +1,15 @@
+"patch"
+{
+	"include" "materials/hd4l/pn_shared.vmt"
+	"insert"
+	{
+		"$basetexture" "hd4l/pn_spike_3"
+		"$my_tag" "2"
+		"$my_div" "210"
+		"$my_radix" "5"
+		"$my_value" "3"
+		"$my_seqdiv" "210"
+		"$my_seqradix" "5"
+		"$my_duration" "0.6"
+	}
+}

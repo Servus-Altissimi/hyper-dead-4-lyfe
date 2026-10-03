@@ -1,0 +1,38 @@
+"hd4lversus"
+{
+	"base"		"versus"
+	"maxplayers"	"8"
+	"playercontrolledzombies"	"1"
+
+	"Author"	"Servus"
+
+	"DisplayTitle"	"Hyper Dead 4 Lyfe Versus"
+
+	convar
+	{
+		sv_consistency 0
+
+		z_gun_swing_vs_min_penalty 999999999
+		z_gun_swing_vs_max_penalty 999999999
+
+		z_ghost_delay_min 1
+		z_ghost_delay_max 2
+		versus_special_respawn_interval 2
+		z_spawn_safety_range 400
+
+		vs_score_pp_health 1.5
+		vs_score_pp_healthbuffer 0.75
+		vs_survival_bonus 50
+		vs_tiebreak_bonus 25
+
+		sv_unlag 1
+		sv_client_min_interp_ratio 1
+		sv_client_max_interp_ratio 2
+		sv_maxrate 0
+		sv_minrate 30000
+		net_splitpacket_maxrate 50000
+
+		first_aid_kit_use_duration 3
+		ammo_pack_use_duration 0.05
+	}
+}

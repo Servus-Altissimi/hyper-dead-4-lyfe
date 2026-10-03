@@ -1,0 +1,15 @@
+"patch"
+{
+	"include" "materials/hd4l/pn_shared.vmt"
+	"insert"
+	{
+		"$basetexture" "hd4l/pn_tank_t16"
+		"$my_tag" "2"
+		"$my_div" "1"
+		"$my_radix" "21"
+		"$my_value" "17"
+		"$my_seqdiv" "1"
+		"$my_seqradix" "1"
+		"$my_duration" "1000000"
+	}
+}

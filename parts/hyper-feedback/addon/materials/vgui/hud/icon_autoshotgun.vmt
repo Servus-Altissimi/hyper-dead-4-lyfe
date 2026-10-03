@@ -1,0 +1,79 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/hud/icon_autoshotgun"
+	"$translucent" "1"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$ignorez" "1"
+	"$nomip" "1"
+	"$nolod" "1"
+	"$nocull" "1"
+	"$color" "[1 1 1]"
+	"$no_fullbright" "1"
+	"$alpha" "1"
+	"$h_k0" "0"
+	"$h_k1" "1"
+	"$h_1" "0"
+	"$h_2" "0"
+	"$h_k2" "50000"
+	"$h_k3" "1000000"
+	"$h_3" "0"
+	"$h_4" "0"
+	"$h_5" "0"
+	"$h_6" "0"
+	"$h_7" "0"
+	"$h_8" "0"
+	"$h_k4" "16200"
+	"$h_9" "0"
+	"$h_k5" "2"
+	"$h_10" "0"
+	"$h_11" "0"
+	"$h_12" "0"
+	"$h_13" "0"
+	"$h_14" "-1000"
+	"$h_15" "0"
+	"$h_16" "0"
+	"$h_17" "0"
+	"$h_18" "0"
+	"$h_k6" "3"
+	"$h_19" "0"
+	"$h_20" "0"
+	"$h_21" "0"
+	"$h_k7" "-0.309804"
+	"$h_22" "0"
+	"$h_k8" "-0.764706"
+	"Proxies"
+	{
+		"ConVar" { "convar" "name2" "resultVar" "$h_1" }
+		"Add" { "srcVar1" "$h_1" "srcVar2" "$h_k2" "resultVar" "$h_2" }
+		"Divide" { "srcVar1" "$h_2" "srcVar2" "$h_k3" "resultVar" "$h_2" }
+		"Int" { "srcVar1" "$h_2" "resultVar" "$h_3" }
+		"Multiply" { "srcVar1" "$h_3" "srcVar2" "$h_k3" "resultVar" "$h_4" }
+		"Subtract" { "srcVar1" "$h_1" "srcVar2" "$h_4" "resultVar" "$h_5" }
+		"CurrentTime" { "resultVar" "$h_6" }
+		"Subtract" { "srcVar1" "$h_3" "srcVar2" "$h_k1" "resultVar" "$h_7" }
+		"Abs" { "srcVar1" "$h_7" "resultVar" "$h_7" }
+		"Divide" { "srcVar1" "$h_5" "srcVar2" "$h_k4" "resultVar" "$h_8" }
+		"Int" { "srcVar1" "$h_8" "resultVar" "$h_8" }
+		"Divide" { "srcVar1" "$h_8" "srcVar2" "$h_k5" "resultVar" "$h_9" }
+		"Int" { "srcVar1" "$h_9" "resultVar" "$h_9" }
+		"Multiply" { "srcVar1" "$h_9" "srcVar2" "$h_k5" "resultVar" "$h_9" }
+		"Subtract" { "srcVar1" "$h_8" "srcVar2" "$h_9" "resultVar" "$h_10" }
+		"LessOrEqual" { "srcVar1" "$h_7" "srcVar2" "$h_k0" "resultVar" "$h_11" "LessEqualVar" "$h_10" "greaterVar" "$h_11" }
+		"Subtract" { "srcVar1" "$h_1" "srcVar2" "$h_12" "resultVar" "$h_15" }
+		"Abs" { "srcVar1" "$h_15" "resultVar" "$h_15" }
+		"Multiply" { "srcVar1" "$h_15" "srcVar2" "$h_13" "resultVar" "$h_16" }
+		"LessOrEqual" { "srcVar1" "$h_16" "srcVar2" "$h_k0" "resultVar" "$h_14" "LessEqualVar" "$h_14" "greaterVar" "$h_6" }
+		"Equals" { "srcVar1" "$h_1" "resultVar" "$h_12" }
+		"Equals" { "srcVar1" "$h_k1" "resultVar" "$h_13" }
+		"Subtract" { "srcVar1" "$h_6" "srcVar2" "$h_14" "resultVar" "$h_17" }
+		"LessOrEqual" { "srcVar1" "$h_17" "srcVar2" "$h_k6" "resultVar" "$h_18" "LessEqualVar" "$h_k1" "greaterVar" "$h_k0" }
+		"Multiply" { "srcVar1" "$h_11" "srcVar2" "$h_18" "resultVar" "$h_19" }
+		"Multiply" { "srcVar1" "$h_19" "srcVar2" "$h_k0" "resultVar" "$h_20" }
+		"Add" { "srcVar1" "$h_20" "srcVar2" "$h_k1" "resultVar" "$color[0]" }
+		"Multiply" { "srcVar1" "$h_19" "srcVar2" "$h_k7" "resultVar" "$h_21" }
+		"Add" { "srcVar1" "$h_21" "srcVar2" "$h_k1" "resultVar" "$color[1]" }
+		"Multiply" { "srcVar1" "$h_19" "srcVar2" "$h_k8" "resultVar" "$h_22" }
+		"Add" { "srcVar1" "$h_22" "srcVar2" "$h_k1" "resultVar" "$color[2]" }
+	}
+}

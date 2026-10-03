@@ -1,0 +1,18 @@
+"patch"
+{
+	"include" "materials/hd4l/pn_shared_any_tone.vmt"
+	"insert"
+	{
+		"$basetexture" "hd4l/arrow_head"
+		"$my_tag" "4"
+		"$my_div" "648"
+		"$my_radix" "18"
+		"$my_value" "0"
+		"$my_seqdiv" "648"
+		"$my_seqradix" "18"
+		"$my_duration" "1000000"
+		"$my_tonediv" "209952"
+		"$my_toneradix" "2"
+		"$my_tone" "1"
+	}
+}

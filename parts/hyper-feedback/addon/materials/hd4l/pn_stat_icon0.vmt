@@ -1,0 +1,15 @@
+"patch"
+{
+	"include" "materials/hd4l/pn_shared_any_add.vmt"
+	"insert"
+	{
+		"$basetexture" "hd4l/st_clock"
+		"$my_tag" "11"
+		"$my_div" "9317"
+		"$my_radix" "2"
+		"$my_value" "0"
+		"$my_seqdiv" "9317"
+		"$my_seqradix" "2"
+		"$my_duration" "1000000"
+	}
+}

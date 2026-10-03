@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="512" viewBox="0 0 1024 512">
+  <rect id="screen" width="1024" height="512" fill="#000000"/>
+  <g id="hit_head">
+    <line x1="520.8" y1="265.9" x2="535.88" y2="282.87" stroke="#ffb03c" stroke-width="6"/>
+    <line x1="503.2" y1="265.9" x2="488.12" y2="282.87" stroke="#ffb03c" stroke-width="6"/>
+    <line x1="503.2" y1="246.1" x2="488.12" y2="229.13" stroke="#ffb03c" stroke-width="6"/>
+    <line x1="520.8" y1="246.1" x2="535.88" y2="229.13" stroke="#ffb03c" stroke-width="6"/>
+    <ellipse cx="512" cy="256" rx="4.06" ry="4.5" fill="#ffb03c"/>
+  </g>
+</svg>

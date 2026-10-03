@@ -1,0 +1,15 @@
+"patch"
+{
+	"include" "materials/hd4l/pn_shared_t.vmt"
+	"insert"
+	{
+		"$basetexture" "vgui/s_panel_namvet"
+		"$my_tag" "4"
+		"$my_div" "11664"
+		"$my_radix" "18"
+		"$my_value" "5"
+		"$my_seqdiv" "648"
+		"$my_seqradix" "18"
+		"$my_duration" "1000000"
+	}
+}

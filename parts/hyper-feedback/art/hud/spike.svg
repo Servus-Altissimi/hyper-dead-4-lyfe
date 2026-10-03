@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="512" viewBox="0 0 1024 512">
+  <rect id="screen" width="1024" height="512" fill="#000000"/>
+  <g id="spike">
+    <line x1="609.78" y1="276" x2="592" y2="256" stroke="#d72d23" stroke-width="5"/>
+    <line x1="609.78" y1="236" x2="592" y2="256" stroke="#d72d23" stroke-width="5"/>
+    <line x1="494.22" y1="366" x2="512" y2="346" stroke="#d72d23" stroke-width="5"/>
+    <line x1="529.78" y1="366" x2="512" y2="346" stroke="#d72d23" stroke-width="5"/>
+    <line x1="414.22" y1="236" x2="432" y2="256" stroke="#d72d23" stroke-width="5"/>
+    <line x1="414.22" y1="276" x2="432" y2="256" stroke="#d72d23" stroke-width="5"/>
+    <line x1="529.78" y1="146" x2="512" y2="166" stroke="#d72d23" stroke-width="5"/>
+    <line x1="494.22" y1="146" x2="512" y2="166" stroke="#d72d23" stroke-width="5"/>
+    <line x1="631.11" y1="276" x2="613.33" y2="256" stroke="#d72d23" stroke-width="5"/>
+    <line x1="631.11" y1="236" x2="613.33" y2="256" stroke="#d72d23" stroke-width="5"/>
+    <line x1="494.22" y1="390" x2="512" y2="370" stroke="#d72d23" stroke-width="5"/>
+    <line x1="529.78" y1="390" x2="512" y2="370" stroke="#d72d23" stroke-width="5"/>
+    <line x1="392.89" y1="236" x2="410.67" y2="256" stroke="#d72d23" stroke-width="5"/>
+    <line x1="392.89" y1="276" x2="410.67" y2="256" stroke="#d72d23" stroke-width="5"/>
+    <line x1="529.78" y1="122" x2="512" y2="142" stroke="#d72d23" stroke-width="5"/>
+    <line x1="494.22" y1="122" x2="512" y2="142" stroke="#d72d23" stroke-width="5"/>
+    <line x1="652.44" y1="276" x2="634.67" y2="256" stroke="#d72d23" stroke-width="5"/>
+    <line x1="652.44" y1="236" x2="634.67" y2="256" stroke="#d72d23" stroke-width="5"/>
+    <line x1="494.22" y1="414" x2="512" y2="394" stroke="#d72d23" stroke-width="5"/>
+    <line x1="529.78" y1="414" x2="512" y2="394" stroke="#d72d23" stroke-width="5"/>
+    <line x1="371.56" y1="236" x2="389.33" y2="256" stroke="#d72d23" stroke-width="5"/>
+    <line x1="371.56" y1="276" x2="389.33" y2="256" stroke="#d72d23" stroke-width="5"/>
+    <line x1="529.78" y1="98" x2="512" y2="118" stroke="#d72d23" stroke-width="5"/>
+    <line x1="494.22" y1="98" x2="512" y2="118" stroke="#d72d23" stroke-width="5"/>
+  </g>
+</svg>

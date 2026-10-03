@@ -1,0 +1,20 @@
+"UnlitTwoTexture"
+{
+	"$basetexture" "hd4l/bar_ticks"
+	"$texture2" "hd4l/bar_me_mask"
+	"$translucent" "1"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$ignorez" "1"
+	"$no_fullbright" "1"
+	"$nomip" "1"
+	"$nolod" "1"
+	"$sx" "0"
+	"$off" "[0 0]"
+	"Proxies"
+	{
+		"LinearRamp" { "rate" "0.35" "initialValue" "0" "resultVar" "$sx" }
+		"Equals" { "srcVar1" "$sx" "resultVar" "$off[0]" }
+		"TextureTransform" { "translateVar" "$off" "resultVar" "$basetexturetransform" }
+	}
+}

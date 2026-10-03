@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="512" viewBox="0 0 1024 512">
+  <rect id="screen" width="1024" height="512" fill="#000000"/>
+  <g id="left">
+    <line x1="378.67" y1="278" x2="394.67" y2="256" stroke="#ffb03c" stroke-width="7"/>
+    <line x1="378.67" y1="234" x2="394.67" y2="256" stroke="#ffb03c" stroke-width="7"/>
+  </g>
+  <g id="right">
+    <line x1="645.33" y1="234" x2="629.33" y2="256" stroke="#ffb03c" stroke-width="7"/>
+    <line x1="645.33" y1="278" x2="629.33" y2="256" stroke="#ffb03c" stroke-width="7"/>
+  </g>
+  <g id="front">
+    <line x1="492.44" y1="161" x2="512" y2="179" stroke="#ffb03c" stroke-width="7"/>
+    <line x1="531.56" y1="161" x2="512" y2="179" stroke="#ffb03c" stroke-width="7"/>
+  </g>
+  <g id="back">
+    <line x1="531.56" y1="351" x2="512" y2="333" stroke="#ffb03c" stroke-width="7"/>
+    <line x1="492.44" y1="351" x2="512" y2="333" stroke="#ffb03c" stroke-width="7"/>
+  </g>
+  <g id="jump">
+    <line x1="497.78" y1="328" x2="512" y2="318" stroke="#ffb03c" stroke-width="6"/>
+    <line x1="526.22" y1="328" x2="512" y2="318" stroke="#ffb03c" stroke-width="6"/>
+    <line x1="497.78" y1="342" x2="512" y2="332" stroke="#ffb03c" stroke-width="6"/>
+    <line x1="526.22" y1="342" x2="512" y2="332" stroke="#ffb03c" stroke-width="6"/>
+  </g>
+</svg>

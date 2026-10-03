@@ -1,0 +1,15 @@
+"patch"
+{
+	"include" "materials/hd4l/pn_shared_t.vmt"
+	"insert"
+	{
+		"$basetexture" "vgui/hud/zombieteamimage_charger"
+		"$my_tag" "3"
+		"$my_div" "648"
+		"$my_radix" "18"
+		"$my_value" "14"
+		"$my_seqdiv" "648"
+		"$my_seqradix" "18"
+		"$my_duration" "1000000"
+	}
+}

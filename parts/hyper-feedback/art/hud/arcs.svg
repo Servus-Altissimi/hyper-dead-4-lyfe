@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="512" viewBox="0 0 1024 512">
+  <rect id="screen" width="1024" height="512" fill="#000000"/>
+  <g id="front">
+    <path d="M 443.96 45.04 A 198.94 224.5 0 0 1 580.04 45.04" fill="none" stroke="#d72d23" stroke-width="12"/>
+  </g>
+  <g id="frontright">
+    <path d="M 596.08 52.53 A 198.94 224.5 0 0 1 692.3 161.12" fill="none" stroke="#d72d23" stroke-width="12"/>
+  </g>
+  <g id="right">
+    <path d="M 698.95 179.22 A 198.94 224.5 0 0 1 698.95 332.78" fill="none" stroke="#d72d23" stroke-width="12"/>
+  </g>
+  <g id="backright">
+    <path d="M 692.3 350.88 A 198.94 224.5 0 0 1 596.08 459.47" fill="none" stroke="#d72d23" stroke-width="12"/>
+  </g>
+  <g id="back">
+    <path d="M 580.04 466.96 A 198.94 224.5 0 0 1 443.96 466.96" fill="none" stroke="#d72d23" stroke-width="12"/>
+  </g>
+  <g id="backleft">
+    <path d="M 427.92 459.47 A 198.94 224.5 0 0 1 331.7 350.88" fill="none" stroke="#d72d23" stroke-width="12"/>
+  </g>
+  <g id="left">
+    <path d="M 325.05 332.78 A 198.94 224.5 0 0 1 325.05 179.22" fill="none" stroke="#d72d23" stroke-width="12"/>
+  </g>
+  <g id="frontleft">
+    <path d="M 331.7 161.12 A 198.94 224.5 0 0 1 427.92 52.53" fill="none" stroke="#d72d23" stroke-width="12"/>
+  </g>
+</svg>

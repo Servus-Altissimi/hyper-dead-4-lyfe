@@ -1,0 +1,16 @@
+"UnlitGeneric"
+{
+	"$basetexture" "hd4l/sheen"
+	"$additive" "1"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$ignorez" "1"
+	"$no_fullbright" "1"
+	"$nomip" "1"
+	"$nolod" "1"
+	"$basetexturetransform" "center .5 .5 scale 1 1 rotate 0 translate 0 0"
+	"Proxies"
+	{
+		"TextureScroll" { "texturescrollvar" "$basetexturetransform" "texturescrollrate" "0.08" "texturescrollangle" "0" }
+	}
+}

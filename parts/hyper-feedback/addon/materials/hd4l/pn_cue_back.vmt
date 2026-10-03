@@ -1,0 +1,15 @@
+"patch"
+{
+	"include" "materials/hd4l/pn_shared.vmt"
+	"insert"
+	{
+		"$basetexture" "hd4l/pn_cue_back"
+		"$my_tag" "2"
+		"$my_div" "1050"
+		"$my_radix" "6"
+		"$my_value" "4"
+		"$my_seqdiv" "6300"
+		"$my_seqradix" "5"
+		"$my_duration" "0.5"
+	}
+}

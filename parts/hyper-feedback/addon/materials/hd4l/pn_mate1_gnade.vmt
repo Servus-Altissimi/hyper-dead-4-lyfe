@@ -1,0 +1,69 @@
+"UnlitGeneric"
+{
+	"$basetexture" "hd4l/eq_molotov"
+	"$translucent" "1"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$ignorez" "1"
+	"$nomip" "1"
+	"$nolod" "1"
+	"$nocull" "1"
+	"$alpha" "0"
+	"$h_k0" "0"
+	"$h_k1" "1"
+	"$h_1" "0"
+	"$h_2" "0"
+	"$h_k2" "50000"
+	"$h_k3" "1000000"
+	"$h_3" "0"
+	"$h_4" "0"
+	"$h_5" "0"
+	"$h_6" "0"
+	"$h_7" "0"
+	"$h_k4" "15"
+	"$h_8" "0"
+	"$h_9" "0"
+	"$h_k5" "9"
+	"$h_10" "0"
+	"$h_11" "0"
+	"$h_12" "0"
+	"$h_13" "0"
+	"$h_14" "0"
+	"$h_15" "-1000"
+	"$h_16" "0"
+	"$h_17" "0"
+	"$h_18" "0"
+	"$h_19" "0"
+	"$h_k6" "3"
+	"$h_20" "0"
+	"Proxies"
+	{
+		"ConVar" { "convar" "name2" "resultVar" "$h_1" }
+		"Add" { "srcVar1" "$h_1" "srcVar2" "$h_k2" "resultVar" "$h_2" }
+		"Divide" { "srcVar1" "$h_2" "srcVar2" "$h_k3" "resultVar" "$h_2" }
+		"Int" { "srcVar1" "$h_2" "resultVar" "$h_3" }
+		"Multiply" { "srcVar1" "$h_3" "srcVar2" "$h_k3" "resultVar" "$h_4" }
+		"Subtract" { "srcVar1" "$h_1" "srcVar2" "$h_4" "resultVar" "$h_5" }
+		"CurrentTime" { "resultVar" "$h_6" }
+		"Subtract" { "srcVar1" "$h_3" "srcVar2" "$h_k4" "resultVar" "$h_7" }
+		"Abs" { "srcVar1" "$h_7" "resultVar" "$h_7" }
+		"Divide" { "srcVar1" "$h_5" "srcVar2" "$h_k1" "resultVar" "$h_8" }
+		"Int" { "srcVar1" "$h_8" "resultVar" "$h_8" }
+		"Divide" { "srcVar1" "$h_8" "srcVar2" "$h_k5" "resultVar" "$h_9" }
+		"Int" { "srcVar1" "$h_9" "resultVar" "$h_9" }
+		"Multiply" { "srcVar1" "$h_9" "srcVar2" "$h_k5" "resultVar" "$h_9" }
+		"Subtract" { "srcVar1" "$h_8" "srcVar2" "$h_9" "resultVar" "$h_10" }
+		"LessOrEqual" { "srcVar1" "$h_7" "srcVar2" "$h_k0" "resultVar" "$h_11" "LessEqualVar" "$h_10" "greaterVar" "$h_11" }
+		"LessOrEqual" { "srcVar1" "$h_k1" "srcVar2" "$h_11" "resultVar" "$h_12" "LessEqualVar" "$h_k1" "greaterVar" "$h_k0" }
+		"Subtract" { "srcVar1" "$h_1" "srcVar2" "$h_13" "resultVar" "$h_16" }
+		"Abs" { "srcVar1" "$h_16" "resultVar" "$h_16" }
+		"Multiply" { "srcVar1" "$h_16" "srcVar2" "$h_14" "resultVar" "$h_17" }
+		"LessOrEqual" { "srcVar1" "$h_17" "srcVar2" "$h_k0" "resultVar" "$h_15" "LessEqualVar" "$h_15" "greaterVar" "$h_6" }
+		"Equals" { "srcVar1" "$h_1" "resultVar" "$h_13" }
+		"Equals" { "srcVar1" "$h_k1" "resultVar" "$h_14" }
+		"Subtract" { "srcVar1" "$h_6" "srcVar2" "$h_15" "resultVar" "$h_18" }
+		"LessOrEqual" { "srcVar1" "$h_18" "srcVar2" "$h_k6" "resultVar" "$h_19" "LessEqualVar" "$h_k1" "greaterVar" "$h_k0" }
+		"Multiply" { "srcVar1" "$h_12" "srcVar2" "$h_19" "resultVar" "$h_20" }
+		"Equals" { "srcVar1" "$h_20" "resultVar" "$alpha" }
+	}
+}
