@@ -17,7 +17,7 @@ const TWO_PI = 6.28318;
 	Delay = 0.5,
 
 	MaxHit = 350,
-	WitchHealth = 1500,
+	WitchHealth = 1000,
 
 	Temper = {
 		z_witch_anger_rate = 0.4,

@@ -1,6 +1,6 @@
 # Witch Escort
 
-Witches spawn with 3 to 5 commons around them, have 1500 health, take at most 350 per hit (no crowning), are calmer to startle, and a witch that kills a survivor dies right after. Red eyes, a rage shriek.
+Witches spawn with 3 to 5 commons around them, have 1000 health, take at most 350 per hit (no crowning), are calmer to startle, and a witch that kills a survivor dies right after. Red eyes, a rage shriek.
 
 **Modes:** `hd4l`, `hd4lversus`, `hd4lsurvival`
 
