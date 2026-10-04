@@ -16,7 +16,7 @@ const EXTRA_TANK_NAME = "escalation_extra_tank";
 		WanderingZombieDensityModifier = 1.75,
 		MaxSpecials = 6, SpecialRespawnInterval = 25, SpecialInitialSpawnDelayMin = 10, SpecialInitialSpawnDelayMax = 30,
 		SmokerLimit = 2, BoomerLimit = 2, HunterLimit = 2, SpitterLimit = 2, JockeyLimit = 2, ChargerLimit = 2,
-		DominatorLimit = 4,
+		DominatorLimit = 3,
 		ShouldAllowSpecialsWithTank = true, ShouldAllowMobsWithTank = true
 	},
 	Peak = {
@@ -25,7 +25,7 @@ const EXTRA_TANK_NAME = "escalation_extra_tank";
 		WanderingZombieDensityModifier = 2.0,
 		MaxSpecials = 10, SpecialRespawnInterval = 8, SpecialInitialSpawnDelayMin = 3, SpecialInitialSpawnDelayMax = 10,
 		SmokerLimit = 3, BoomerLimit = 3, HunterLimit = 3, SpitterLimit = 3, JockeyLimit = 3, ChargerLimit = 3,
-		DominatorLimit = 5
+		DominatorLimit = 4
 	},
 
 	Pacing = { MegaMobSize = true, MobMinSize = true, MobMaxSize = true, MobSpawnMinTime = true, MobSpawnMaxTime = true,
@@ -41,7 +41,7 @@ const EXTRA_TANK_NAME = "escalation_extra_tank";
 	AmpEyeHeight = 80.0,
 	Amps = {},
 	TankGroupAtPeak = 2,
-	TankGroupRound = 0.25,
+	TankGroupRound = 0.1,
 	TankEveryMap = true,
 	TankDelayMin = 90.0,
 	TankDelayMax = 180.0,
