@@ -3,23 +3,25 @@ from PIL import Image
 from .. import config
 from ..util import vtf, write
 
-ART = config.part("core") / "art" / "menu_mode_hd4l.png"
+ART = config.part("core") / "art"
+NAMES = ("menu_mode_hd4l", "menu_mode_fort")
 
 VMT = """UnlitGeneric
-{
+{{
 	$translucent 1
-	$basetexture "VGUI\\menu_mode_hd4l"
+	$basetexture "VGUI\\{name}"
 	$vertexcolor 1
 	$vertexalpha 1
 	$no_fullbright 1
 	$ignorez 1
 	$additive 0
-}
+}}
 """
 
 
 def build(out=config.ROOT):
     dest = out / "parts/core/addon/materials/vgui"
-    vtf(Image.open(ART), dest / "menu_mode_hd4l.vtf", fmt="dxt5", mips=False)
-    write(dest / "menu_mode_hd4l.vmt", VMT)
-    print("menu_mode_hd4l.vtf from art/menu_mode_hd4l.png")
+    for name in NAMES:
+        vtf(Image.open(ART / f"{name}.png"), dest / f"{name}.vtf", fmt="dxt5", mips=False)
+        write(dest / f"{name}.vmt", VMT.format(name=name))
+        print(f"{name}.vtf from art/{name}.png")

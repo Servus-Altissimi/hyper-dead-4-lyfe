@@ -81,7 +81,7 @@
 		{
 			"id"				"BtnFort"
 			"name"				"Fort"
-			"image"				"vgui/menu_mode_hd4l"
+			"image"				"vgui/menu_mode_fort"
 			"command"			"FlmFortFlyout"
 			"menutitle"			"Fort"
 			"menuhint"			" "
