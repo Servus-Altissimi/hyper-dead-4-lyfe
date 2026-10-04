@@ -12,7 +12,7 @@ const ARMOUR_DMG_DROWN = 16384;
 
 	Floor = 1.0,
 
-	MovingOnly = true,
+	Still = 0.85,
 	MoveSpeed = 200.0,
 
 	SkipTypes = ARMOUR_DMG_FALL | ARMOUR_DMG_DROWN
@@ -51,20 +51,18 @@ function Armour::Moving(victim) {
 }
 
 function Armour::Scale(damageTable) {
-	if (Incoming >= 1.0 || !ModeAllowed())
+	if ((Incoming >= 1.0 && Still >= 1.0) || !ModeAllowed())
 		return false;
 	if (!("Victim" in damageTable) || !("DamageDone" in damageTable))
 		return false;
 	if (!Applies(damageTable.Victim))
-		return false;
-	if (MovingOnly && !Moving(damageTable.Victim))
 		return false;
 	if (("DamageType" in damageTable) && (damageTable.DamageType & SkipTypes))
 		return false;
 	local before = damageTable.DamageDone;
 	if (before <= 0)
 		return false;
-	local after = before * Incoming;
+	local after = before * (Moving(damageTable.Victim) ? Incoming : Still);
 	if (after < Floor)
 		after = before < Floor ? before : Floor;
 	damageTable.DamageDone = after;

@@ -22,7 +22,7 @@ Check(allow, "armour: hit allowed");
 nick.vel = Vector(100, 0, 0);
 t = { Victim = nick, Attacker = null, DamageDone = 100.0, DamageType = 128 };
 ::g_ModeScript.AllowTakeDamage(t);
-Near(t.DamageDone, 100.0, "armour: standing or walking, full damage");
+Near(t.DamageDone, 85.0, "armour: standing or walking, 100 becomes 85");
 nick.props.m_fFlags = 0;
 t = { Victim = nick, Attacker = null, DamageDone = 100.0, DamageType = 128 };
 ::g_ModeScript.AllowTakeDamage(t);
