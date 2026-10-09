@@ -9,4 +9,4 @@ The HUD. The server hides the stock survivor panels and draws its own through a 
 
 **Modes:** `hd4l`, `hd4lversus`, `hd4lsurvival`, `hd4lfort`, `hd4lfreebuild`
 
-**Code:** `addon/scripts/vscripts/hyper_feedback.nut`. Knobs sit at the top of each script.
+**Code:** `addon/scripts/vscripts/hyper_feedback.nut` (knobs, cues and the game events) includes `hyper_feedback_panel.nut` (the HUD panel: values, stats, kill feed, team and fort panels). Knobs sit at the top of each script.

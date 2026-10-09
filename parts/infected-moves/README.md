@@ -13,4 +13,4 @@ Cooldowns shrink with escalation's progress.
 
 **Modes:** `hd4l`, `hd4lversus`, `hd4lsurvival`
 
-**Code:** `addon/scripts/vscripts/infected_moves.nut`. Knobs sit at the top of each script.
+**Code:** `addon/scripts/vscripts/infected_moves.nut` (knobs, shared helpers, the hunter, claw locks and the tick) includes `infected_moves_tank.nut`, `infected_moves_witch.nut`, `infected_moves_smoker.nut`, `infected_moves_boomer.nut`, `infected_moves_spitter.nut` and `infected_moves_charger.nut` (the charger's and the rushing tank's fire). Knobs sit at the top of each script.

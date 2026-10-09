@@ -1013,6 +1013,8 @@ foreach (i, pc in ::Fort.Pieces)
 Check(piece.ent.cls == "prop_dynamic_override" && piece.ent.valid, "recheck: as a plain prop");
 
 Load("parts/hyper-feedback/addon/scripts/vscripts/hyper_feedback.nut");
+foreach (file in ::HyperFeedback.Files)
+	Load("parts/hyper-feedback/addon/scripts/vscripts/" + file + ".nut");
 function Sent(tag) {
 	local out = [];
 	foreach (f in Fired("Command"))

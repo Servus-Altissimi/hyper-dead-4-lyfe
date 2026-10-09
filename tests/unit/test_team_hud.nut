@@ -4,6 +4,8 @@ Suite("team hud");
 
 Load("parts/core/addon/scripts/vscripts/hd4l_core.nut");
 Load("parts/hyper-feedback/addon/scripts/vscripts/hyper_feedback.nut");
+foreach (file in ::HyperFeedback.Files)
+	Load("parts/hyper-feedback/addon/scripts/vscripts/" + file + ".nut");
 local H = ::HyperFeedback;
 
 function Field(v, fields, name) {

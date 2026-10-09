@@ -4,7 +4,11 @@ Suite("tank");
 
 Load("parts/core/addon/scripts/vscripts/hd4l_core.nut");
 Load("parts/infected-moves/addon/scripts/vscripts/infected_moves.nut");
+foreach (file in ::InfectedMoves.Files)
+	Load("parts/infected-moves/addon/scripts/vscripts/" + file + ".nut");
 Load("parts/hyper-feedback/addon/scripts/vscripts/hyper_feedback.nut");
+foreach (file in ::HyperFeedback.Files)
+	Load("parts/hyper-feedback/addon/scripts/vscripts/" + file + ".nut");
 
 Reset();
 ::InfectedMoves.OnGameEvent_round_start({});
