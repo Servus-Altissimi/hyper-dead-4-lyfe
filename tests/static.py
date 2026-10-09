@@ -83,6 +83,35 @@ wrappers = [rel(p) for p, s in SOURCE.items() if "scope.AllowTakeDamage <-" in s
 check(sorted(wrappers) == sorted(["parts/no-incap/addon/scripts/vscripts/no_incap.nut", "parts/witch-escort/addon/scripts/vscripts/witch_escort.nut"]),
       "only no-incap and witch-escort wrap AllowTakeDamage", ", ".join(wrappers))
 
+print("== house rules")
+for name, p in sorted(registered.items()):
+    s = SOURCE[p]
+    for m in re.findall(r"GameEventCallbacks\[\"(hd4l_\w+)\"\] <- true", s):
+        check(m == "hd4l_" + name, "%s marks itself %s" % (name, "hd4l_" + name), m)
+for p, s in SOURCE.items():
+    listed = re.search(r"^\tFiles = \[ ([^\]]*) \],", s, re.M)
+    for f in re.findall(r"\"(\w+)\"", listed.group(1)) if listed else []:
+        check(os.path.isfile(os.path.join(os.path.dirname(p), f + ".nut")), "%s includes %s, which exists" % (rel(p), f))
+text = "\n".join(SOURCE.values())
+orphans = [rel(p) for p in LOGIC if os.path.basename(p)[:-4] not in tables and '"%s"' % os.path.basename(p)[:-4] not in text]
+check(not orphans, "every part script is loaded by name", ", ".join(orphans))
+pace = []
+for p, s in SOURCE.items():
+    for body in re.split(r"\n(?=function )", s):
+        if re.search(r"^function \w+::SetLag\(", body):
+            continue
+        writes = re.search(r"SetPropFloat\([^\n]*\"m_flLaggedMovementValue\"|\bSetLag\(", body)
+        reads = re.search(r"GetPropFloat\([^\n]*\"m_flLaggedMovementValue\"|\bGetLag\(", body)
+        if writes and not reads:
+            pace.append(rel(p) + ": " + body.split("(")[0][9:])
+check(not pace, "speed writes read the engine's value in the same function", ", ".join(pace))
+engine = {"IN_ATTACK2", "IN_RELOAD", "IN_USE", "DMG_ALWAYSGIB"}
+for part in sorted(glob.glob(os.path.join(ROOT, "parts/*/"))):
+    s = "\n".join(v for p, v in SOURCE.items() if p.startswith(part))
+    used = {c for c in engine if re.search(r"\b%s\b" % c, s)}
+    declared = set(re.findall(r"^const (\w+) =", s, re.M))
+    check(used <= declared, "%s declares the engine constants it uses" % rel(part).rstrip("/"), ", ".join(sorted(used - declared)))
+
 print("== no stock outline glows on infected")
 glows = [rel(p) for p, s in SOURCE.items() if re.search(r"m_Glow|SetGlow|m_iGlowType", s) and "door_blast" not in p]
 check(not glows, "no glow outline props outside the door blast", ", ".join(glows))
