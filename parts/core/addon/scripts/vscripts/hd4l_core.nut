@@ -32,6 +32,23 @@
 	},
 	RearmInterval = 0.1,
 
+	StockFile = "hd4l_stock_cvars.txt",
+	StockCvars = [
+		"sv_rescue_disabled", "sv_permawipe", "sb_all_bot_game", "defibrillator_return_to_life_time", "phys_pushscale",
+		"survivor_revive_duration", "sb_friend_immobilized_reaction_time_normal", "sb_friend_immobilized_reaction_time_hard",
+		"sb_friend_immobilized_reaction_time_expert", "sb_allow_shoot_through_survivors", "sb_combat_saccade_speed", "sb_dont_bash",
+		"vomitjar_radius", "vomitjar_radius_survivors", "vomitjar_duration_infected_bot", "vomitjar_duration_infected_pz", "vomitjar_duration_survivor",
+		"z_witch_damage_per_kill_hit", "z_witch_health", "z_witch_anger_rate", "z_witch_relax_rate", "z_witch_personal_space",
+		"z_witch_threat_normal_range", "z_witch_threat_hostile_range", "z_witch_flashlight_range", "z_witch_hostile_at_me_anger",
+		"z_witch_wander_personal_space", "z_witch_wander_hear_radius",
+		"z_tank_health", "z_tank_speed", "z_tank_throw_interval", "z_charge_max_speed", "z_speed", "z_lunge_power", "z_lunge_up",
+		"z_exploding_inner_radius", "z_exploding_outer_radius",
+		"z_minigun_overheat_time", "z_minigun_cooldown_time", "mounted_gun_overheat_time", "mounted_gun_cooldown_time", "mounted_gun_overheat_penalty_time",
+		"ammo_assaultrifle_max", "ammo_smg_max", "ammo_shotgun_max", "ammo_autoshotgun_max", "ammo_huntingrifle_max", "ammo_sniperrifle_max",
+		"ammo_grenadelauncher_max", "ammo_m60_max"
+	],
+	Restored = false,
+
 	WeaponsCoop = {
 		weapon_sniper_scout = "weapon_hunting_rifle",
 		weapon_sniper_awp = "weapon_sniper_military",
@@ -161,6 +178,7 @@ function HD4L::Verify(generation) {
 function HD4L::LoadParts() {
 	local root = getroottable();
 	local loaded = 0;
+	RestoreCvars();
 	foreach (name, inVersus in Required) {
 		if (!Wanted(name))
 			continue;
@@ -170,6 +188,35 @@ function HD4L::LoadParts() {
 	}
 	ArmAll();
 	Log("included " + loaded + " parts");
+}
+
+function HD4L::RestoreCvars() {
+	if (Restored)
+		return;
+	Restored = true;
+	local saved = null;
+	try { saved = FileToString(StockFile); } catch (e) {}
+	if (saved != null && saved != "") {
+		foreach (line in split(saved, "\n")) {
+			local tab = line.find("\t");
+			if (tab != null)
+				try { Convars.SetValue(line.slice(0, tab), line.slice(tab + 1)); } catch (e) {}
+		}
+		if (!Active())
+			try { StringToFile(StockFile, ""); } catch (e) {}
+		Log("restored stock cvars");
+		return;
+	}
+	if (!Active())
+		return;
+	local text = "";
+	foreach (name in StockCvars) {
+		local value = null;
+		try { value = Convars.GetStr(name); } catch (e) {}
+		if (value != null)
+			text += name + "\t" + value + "\n";
+	}
+	try { StringToFile(StockFile, text); } catch (e) { Log("could not save stock cvars: " + e); }
 }
 
 function HD4L::ArmAll() {

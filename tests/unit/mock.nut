@@ -1,6 +1,6 @@
 ::T <- {
 	now = 100.0, mode = "hd4l", ents = [], nextIndex = 1, fired = [], sounds = [], spawned = [],
-	cvars = {}, logs = [], pass = 0, fail = 0, suite = ""
+	cvars = {}, files = {}, logs = [], pass = 0, fail = 0, suite = ""
 };
 
 ::GameEventCallbacks <- {};
@@ -23,6 +23,8 @@ function RegisterScriptGameEventListener(n) {}
 function ClientPrint(a, b, c) {}
 function IncludeScript(a, b = null) {}
 function SaveTable(n, t) {}
+function FileToString(n) { return (n in ::T.files) ? ::T.files[n] : null; }
+function StringToFile(n, s) { ::T.files[n] <- s; }
 function RestoreTable(n, t) {}
 function GetFlowDistanceForPosition(p) { return 0.0; }
 function TraceLine(t) { t.hit <- false; t.fraction <- 1.0; t.pos <- t.end; }
@@ -217,6 +219,7 @@ class EntitiesClass {
 class ConvarsClass {
 	function SetValue(n, v) { ::T.cvars[n] <- v; }
 	function GetFloat(n) { return (n in ::T.cvars) ? ::T.cvars[n].tofloat() : 1.0; }
+	function GetStr(n) { return (n in ::T.cvars) ? ::T.cvars[n].tostring() : "1"; }
 	function GetClientConvarValue(n, i) { return ""; }
 }
 ::Convars <- ConvarsClass();

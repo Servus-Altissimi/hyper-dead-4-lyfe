@@ -50,8 +50,19 @@ function Report(errors) {
 	return errors.len() == 0;
 }
 
+local restored = {};
+foreach (name in ::HD4L.StockCvars)
+	restored[name] <- true;
+foreach (name in ::Projectiles.BloodCvars)
+	restored[name] <- true;
+
 foreach (mode in [ "hd4l", "hd4lversus", "hd4lsurvival", "hd4lfort", "hd4lfreebuild" ]) {
 	Check(Report(Round(mode)), mode + ": round start and the first ticks never throw");
+	local missed = [];
+	foreach (name, value in ::T.cvars)
+		if (!(name in restored))
+			missed.append(name);
+	Check(Report(missed), mode + ": every cvar it sets goes back to stock in vanilla");
 	local off = [];
 	foreach (name, skip in ::HD4L.Skip[mode])
 		if (skip && name != "fort" && Parts()[name].ModeAllowed())
@@ -83,5 +94,32 @@ foreach (mode in [ "coop", "realism", "versus", "survival", "scavenge", "mutatio
 			touched.append(e.name);
 	Check(Report(touched), mode + ": players keep stock speed, buttons and health");
 }
+
+function Map(mode) {
+	::T.mode = mode;
+	::HD4L.Restored = false;
+	::HD4L.RestoreCvars();
+}
+
+Reset();
+::T.files.clear();
+::T.cvars.z_speed <- "250";
+::T.cvars.ammo_smg_max <- "650";
+Map("coop");
+Check(::T.files.len() == 0, "stock: a vanilla map with no snapshot saves nothing");
+Map("hd4l");
+Check(::T.files[::HD4L.StockFile].find("z_speed\t250\n") != null, "stock: the first hd4l map saves the stock values");
+::Convars.SetValue("z_speed", 290);
+::Convars.SetValue("ammo_smg_max", 1300);
+Map("hd4l");
+Check(::T.cvars.z_speed == "250" && ::T.cvars.ammo_smg_max == "650", "stock: the next hd4l map starts from stock, so multipliers never compound");
+::Convars.SetValue("z_speed", 290);
+::T.cvars.ammo_smg_max = 1300;
+Map("coop");
+Check(::T.cvars.z_speed == "250" && ::T.cvars.ammo_smg_max == "650", "stock: a vanilla map gets the stock values back");
+Check(::T.files[::HD4L.StockFile] == "", "stock: the snapshot is cleared once restored");
+::Convars.SetValue("z_speed", 300);
+Map("coop");
+Check(::T.cvars.z_speed == 300, "stock: later vanilla maps keep the server's own values");
 
 Done();

@@ -105,6 +105,10 @@ for p, s in SOURCE.items():
         if writes and not reads:
             pace.append(rel(p) + ": " + body.split("(")[0][9:])
 check(not pace, "speed writes read the engine's value in the same function", ", ".join(pace))
+stock = set(re.findall(r'"(\w+)"', core[core.index("StockCvars = ["):core.index("],", core.index("StockCvars = ["))]))
+stock |= set(re.findall(r'"(\w+)"', re.search(r"\tBloodCvars = \[([^\]]*)\]", text).group(1)))
+literal = set(re.findall(r'Convars\.SetValue\(\\?"(\w+)\\?"', text))
+check(literal <= stock, "every cvar a part sets by name is restored in vanilla", ", ".join(sorted(literal - stock)))
 engine = {"IN_ATTACK2", "IN_RELOAD", "IN_USE", "DMG_ALWAYSGIB"}
 for part in sorted(glob.glob(os.path.join(ROOT, "parts/*/"))):
     s = "\n".join(v for p, v in SOURCE.items() if p.startswith(part))
