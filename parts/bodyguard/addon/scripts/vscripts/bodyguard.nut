@@ -240,9 +240,11 @@ function Bodyguard::OnGameEvent_round_start(params) {
 	Bots = {};
 	Trails = {};
 	Generation++;
-	foreach (name, value in Cvars)
-		Convars.SetValue(name, value);
-	Convars.SetValue("survivor_revive_duration", ReviveSeconds);
+	if (ModeAllowed()) {
+		foreach (name, value in Cvars)
+			Convars.SetValue(name, value);
+		Convars.SetValue("survivor_revive_duration", ReviveSeconds);
+	}
 	Tick(Generation);
 }
 
