@@ -187,7 +187,26 @@ function NoIncap::OnGameEvent_player_incapacitated(params) {
 	try { player = GetPlayerFromUserID(params.userid); } catch (e) { return; }
 	if (!Applies(player) || !player.IsIncapacitated() || player.IsHangingFromLedge())
 		return;
-	Kill(player);
+	if (!Rescue(player))
+		Kill(player);
+}
+
+function NoIncap::Rescue(player) {
+	if (!("BotTakeover" in getroottable()) || !("CanHijack" in ::BotTakeover))
+		return false;
+	try {
+		if (!::BotTakeover.CanHijack(player))
+			return false;
+		player.ReviveFromIncap();
+		::BotTakeover.Hijack(player);
+		return true;
+	} catch (e) { Log("incap takeover failed: " + e); }
+	return false;
+}
+
+function NoIncap::OnGameEvent_round_start(params) {
+	if (ModeAllowed())
+		try { InstallDamageHook(); } catch (e) { Log("damage hook install failed: " + e); }
 }
 
 function NoIncap::Kill(player) {
@@ -198,11 +217,11 @@ function NoIncap::Kill(player) {
 }
 
 function NoIncap::Hook() {
+	InstallDamageHook();
 	if (("GameEventCallbacks" in getroottable()) && ("hd4l_no_incap" in ::GameEventCallbacks))
 		return;
 	__CollectEventCallbacks(this, "OnGameEvent_", "GameEventCallbacks", RegisterScriptGameEventListener);
 	::GameEventCallbacks["hd4l_no_incap"] <- true;
-	InstallDamageHook();
 }
 
 NoIncap.Hook();

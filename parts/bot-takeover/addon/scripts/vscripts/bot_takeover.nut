@@ -14,8 +14,10 @@ const DMG_FALL = 32;
 	Stock = true,
 
 	Holds = 0,
+	HeldCvar = false,
 
-	Pending = {}
+	Pending = {},
+	Generation = 0
 }
 
 function BotTakeover::Log(msg) {
@@ -44,18 +46,33 @@ function BotTakeover::PlayerFromUserID(userid) {
 
 function BotTakeover::HoldMissionLost(hold) {
 	if (hold) {
-		if (Holds == 0 && Convars.GetFloat("sb_all_bot_game") == 0)
+		if (Holds == 0 && Convars.GetFloat("sb_all_bot_game") == 0) {
 			Convars.SetValue("sb_all_bot_game", 1);
+			HeldCvar = true;
+		}
 		Holds++;
 	} else if (Holds > 0) {
 		Holds--;
 		if (Holds == 0)
-			Convars.SetValue("sb_all_bot_game", 0);
+			ReleaseCvar();
 	}
 }
 
+function BotTakeover::ReleaseCvar() {
+	if (HeldCvar)
+		Convars.SetValue("sb_all_bot_game", 0);
+	HeldCvar = false;
+}
+
+function BotTakeover::OnGameEvent_round_start(params) {
+	Generation++;
+	Holds = 0;
+	ReleaseCvar();
+	Pending = {};
+}
+
 function BotTakeover::Schedule(userid, delay, attempt) {
-	DoEntFire("!self", "RunScriptCode", "::BotTakeover.TakeOver(" + userid + ", " + attempt + ")", delay, null, Entities.First());
+	DoEntFire("!self", "RunScriptCode", "::BotTakeover.TakeOver(" + userid + ", " + attempt + ", " + Generation + ")", delay, null, Entities.First());
 }
 
 function BotTakeover::OnGameEvent_player_death(params) {
@@ -104,7 +121,9 @@ function BotTakeover::DeadHuman() {
 	return null;
 }
 
-function BotTakeover::TakeOver(userid, attempt) {
+function BotTakeover::TakeOver(userid, attempt, generation = -1) {
+	if (generation >= 0 && generation != Generation)
+		return;
 	local held = attempt == 0;
 
 	local player = PlayerFromUserID(userid);
@@ -155,6 +174,8 @@ function BotTakeover::HijackNow(userid) {
 		return;
 	local bot = PickBot();
 	if (bot == null) {
+		if (userid in Pending)
+			delete Pending[userid];
 		player.TakeDamage(99999, DMG_FALL, Entities.First());
 		return;
 	}
@@ -178,7 +199,7 @@ function BotTakeover::HijackNow(userid) {
 	bot.SetOrigin(playerOrigin);
 	KillBot(bot);
 	ClearFade(player);
-	if (("DeathShockwave" in getroottable()) && ("Start" in ::DeathShockwave))
+	if (("DeathShockwave" in getroottable()) && ("StartAt" in ::DeathShockwave))
 		try { ::DeathShockwave.StartAt(playerOrigin, player); } catch (e) {}
 }
 
@@ -214,8 +235,12 @@ function BotTakeover::Steal(player, bot) {
 
 	local returnTime = Convars.GetFloat("defibrillator_return_to_life_time");
 	Convars.SetValue("defibrillator_return_to_life_time", 1);
-	player.ReviveByDefib();
+	try { player.ReviveByDefib(); } catch (e) { Log("defib revive failed: " + e); }
 	Convars.SetValue("defibrillator_return_to_life_time", returnTime);
+	if (player.IsDead()) {
+		Log(player.GetPlayerName() + " stayed dead, " + bot.GetPlayerName() + " is spared");
+		return;
+	}
 
 	if (SwapCharacter)
 		SwapIdentity(player, bot);
